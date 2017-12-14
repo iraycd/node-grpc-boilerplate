@@ -5,9 +5,5 @@ services:
     build: .
     ports:
      - "50051:50051"
-    volumes:
-      - "./config:/usr/src/app/config"
-      - "./src:/usr/src/app/src"
-      - "./proto:/proto"
     expose:
      - "50051"

@@ -27,6 +27,7 @@ COPY ./package*.json /usr/src/app/
 RUN npm install
 
 # Copying the source.
+COPY ./config/ /usr/src/app/config/
 COPY ./src/ /usr/src/app/src/
 
 # Expose the PORT before starting.
