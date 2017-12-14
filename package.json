@@ -1,0 +1,22 @@
+{
+  "name": "node-grpc-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.7",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "config": "^1.28.1",
+    "grpc": "^1.7.3",
+    "grpc-caller": "^0.3.1",
+    "grpc-create-error": "^1.0.0",
+    "mali": "^0.4.1",
+    "mali-logger": "^0.2.1",
+    "mali-tojson": "^0.2.0"
+  }
+}
