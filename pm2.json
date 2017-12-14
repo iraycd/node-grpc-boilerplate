@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "node-grpc-boilerplate",
+      "script": "build/app.js",
+      "env": {
+        "production": true
+      },
+      "error_file": "/dev/stderr",
+      "out_file": "/dev/stdout"
+    }
+  ]
+}

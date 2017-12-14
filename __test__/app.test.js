@@ -1,5 +1,5 @@
 /* eslint-env jest */
-require('../app')
+require('../src/app')
 const config = require('config')
 const caller = require('grpc-caller')
 

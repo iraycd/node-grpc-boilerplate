@@ -1,7 +1,7 @@
 import config from 'config'
 import Mali from 'mali'
 import logger from 'mali-logger'
-import RouteConfig from './src/route'
+import RouteConfig from './route'
 
 const SERVICE_NAME = config.get('name')
 const HOST = config.get('host')
@@ -9,7 +9,7 @@ const PORT = config.get('port')
 const HOSTPORT = `${HOST}:${PORT}`
 let app
 
-const SAMPLE_PROTO = `./proto/sample.proto`
+const SAMPLE_PROTO = '/proto/sample.proto'
 
 function main () {
   app = new Mali(SAMPLE_PROTO)

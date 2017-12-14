@@ -5,17 +5,26 @@
   "license": "MIT",
   "scripts": {
     "babel-node": "babel-node --presets=env",
-    "start:dev": "nodemon --exec npm run babel-node  -- app.js",
+    "start:dev": "nodemon --exec npm run babel-node  -- ./src/app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-server",
     "lint": "standard",
     "pretest": "npm run lint",
     "test": "jest --forceExit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-plugin-transform-async-to-generator":"^6.24.1",
     "babel-eslint": "^8.0.3",
     "jest": "^21.2.1",
     "nodemon": "^1.12.7",
     "standard": "^10.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": ["standard"]
   },
   "standard": {
     "parser": "babel-eslint"
@@ -34,16 +43,24 @@
     "collectCoverageFrom": ["src/**/*.js"],
     "testPathIgnorePatterns": ["<rootDir>/config/"]
   },
+  "babel":{
+    "presets": [["env",{
+      "targets": {
+        "node": "8"
+      },
+      "useBuiltIns": "usage"}
+    ]],
+    "plugins": ["transform-async-to-generator"]
+  },
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
     "config": "^1.28.1",
-    "grpc": "^1.7.3",
     "grpc-caller": "^0.3.1",
     "grpc-create-error": "^1.0.0",
     "mali": "^0.4.1",
     "mali-logger": "^0.2.1",
-    "mali-tojson": "^0.2.0"
+    "mali-tojson": "^0.2.0",
+    "grpc": "1.6.6"
   }
 }

@@ -1,0 +1,19 @@
+version: "2"
+services:
+  node-grpc-boilerplate:
+    container_name: node-grpc
+    build: .
+    entrypoint:
+      - "npm"
+      - "run"
+      - "start:dev"
+    volumes:
+      - "./config:/usr/src/app/config"
+      - "./src:/usr/src/app/src"
+      - "./proto:/proto"
+    ports:
+     - "50051:50051"
+    environment:
+     - "NODE_ENV=dev"
+    expose:
+     - "50051"

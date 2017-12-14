@@ -13,6 +13,6 @@ let addressBook = {
   people: [person]
 }
 
-export const list = (ctx) => {
+export const list = async (ctx) => {
   ctx.res = addressBook
 }
