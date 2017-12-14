@@ -3,12 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "babel-node": "babel-node --presets=env",
+    "start:dev": "nodemon --exec npm run babel-node  -- app.js"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
     "jest": "^21.2.1",
     "nodemon": "^1.12.7",
     "standard": "^10.0.3"
   },
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
     "config": "^1.28.1",
