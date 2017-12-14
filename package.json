@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "babel-node": "babel-node --presets=env",
-    "start:dev": "nodemon --exec npm run babel-node  -- app.js"
+    "start:dev": "nodemon --exec npm run babel-node  -- app.js",
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "jest --forceExit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -16,6 +19,20 @@
   },
   "standard": {
     "parser": "babel-eslint"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.js"],
+    "testPathIgnorePatterns": ["<rootDir>/config/"]
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1",

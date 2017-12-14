@@ -5,7 +5,7 @@ let person = {
   phones: [
     {
       number: '+91 9052500315',
-      type: 2
+      type: 'WORK'
     }
   ]
 }
